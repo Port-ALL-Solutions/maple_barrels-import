@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="import_barrels_with_owner_form_view">
+            <field name="name">Import Barrels Inventory For Specific Owner Using CSV</field>
+            <field name="model">import.barrels.inventory</field>
+                <field name="arch" type="xml">
+                    <form string="Import Barrels Inventory For Specific Owner Using CSV">
+                        <group>
+                            <field name="location_id"/>
+                            <field name="owner_id"/>
+                        </group>
+                        <group>
+                            <field name="import_file" class="oe_inline" filename="datas_fname" required="True"/>
+                            <field name="datas_fname" class="oe_inline" invisible="0" readonly="0"/>
+                        </group>
+                        <footer>
+                            <button string="Import" name="action_import_file" type="object" class="oe_highlight"/>
+                            or
+                            <button string="Cancel" class="oe_link" special="cancel"/>
+                        </footer>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="import_barrels_form_view">
+            <field name="name">Import Barrels Inventory Using CSV</field>
+            <field name="model">import.barrels.inventory</field>
+                <field name="arch" type="xml">
+                    <form string="Import Barrels Inventory Using CSV">
+                        <group>
+                            <field name="location_id"/>
+                        </group>
+                        <group>
+                            <field name="import_file" class="oe_inline" filename="datas_fname" required="True"/>
+                            <field name="datas_fname" class="oe_inline" invisible="0" readonly="0"/>
+                        </group>
+                        <footer>
+                            <button string="Import" name="action_import_file" type="object" class="oe_highlight"/>
+                            or
+                            <button string="Cancel" class="oe_link" special="cancel"/>
+                        </footer>
+                    </form>
+                </field>
+        </record>
+
+        <record id="action_import_barrels_inventory" model="ir.actions.act_window">
+            <field name="name">Import Barrels Inventory Using CSV</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">import.barrels.inventory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="import_barrels_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <record id="action_import_barrels_inventory_for_owner" model="ir.actions.act_window">
+            <field name="name">Import Barrels Inventory For Specific Owner Using CSV</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">import.barrels.inventory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="import_barrels_with_owner_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+   </data>
+</openerp>
