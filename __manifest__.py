@@ -8,7 +8,7 @@
     'author': "Portall Solutions inc.",
     'website': "portall.ca",
     'category': 'Maple',
-    'summary':  'Stock Inventory Adjustments Import using CSV',
+    'summary':  'Barrels Inventory Import using CSV',
     'depends': ['stock'],
     'description': """
     This module add import barrels inventory CSV File.
